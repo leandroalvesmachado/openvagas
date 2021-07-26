@@ -28,9 +28,46 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Gems adicionadas
+
+# para variaveis de ambiente
+gem 'figaro'
+
+# para forms simples e elegantes na sintaxe
+gem 'simple_form'
+
+# login e autenticacao
+gem 'devise'
+
+# engine de html
+gem 'haml'
+gem "haml-rails", "~> 2.0"
+
+# para paginacao
+#gem 'kaminari'
+#gem 'kaminari-bootstrap'
+
+# para pesquisa e buscas
+#gem 'ransack'
+
+# selects mais interessantes
+#gem 'select2-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Gems adicionadas
+
+  # para debug
+  gem 'pry'
+  gem 'pry-rails'
+  
+  # para console mais amigavel
+  gem 'awesome_print'
+  
+  # para testes
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -40,6 +77,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Gems adicionadas
+
+  # para tratar do envio de emails no ambiente de dev
+  gem 'mailcatcher'
 end
 
 group :test do
