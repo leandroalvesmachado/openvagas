@@ -1,0 +1,22 @@
+%nav.navbar.navbar-expand-md.fixed-top.navbar-dark.bg-dark
+  %a.navbar-brand{:href => "#"} Open Vagas
+  %button.navbar-toggler.p-0.border-0{"data-toggle" => "offcanvas", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarsExampleDefault.navbar-collapse.offcanvas-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %a.nav-link{:href => root_path}
+          Início
+          %span.sr-only (current)
+      %li.nav-item.active
+        %a.nav-link{:href => dynamic_url_company}
+          Minha Empresa
+          %span.sr-only (current)
+      - unless user_signed_in?
+        %li.nav-item
+          = link_to 'Login/Cadastro', new_user_session_path, class: 'nav-link'
+      - if user_signed_in?
+        %li.nav-item.dropdown
+          %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"} Settings
+          .dropdown-menu{"aria-labelledby" => "dropdown01"}
+            = link_to('Sair', destroy_user_session_path, method: :delete, class: "dropdown-item")

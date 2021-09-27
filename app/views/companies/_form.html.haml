@@ -1,0 +1,7 @@
+= simple_form_for @company do |f|
+ = f.input :name
+ = f.input :url
+ - if @company.logo.attached?
+  = image_tag(url_for(@company.logo), class: 'company-logo')
+ = f.input :logo
+ = f.button :submit, class: 'btn btn-primary'

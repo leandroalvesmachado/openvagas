@@ -6,9 +6,9 @@
     %title Openvagas
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# devise.css = stylesheet_link_tag 'devise', css por layout
+    = stylesheet_link_tag 'devise', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = render 'shared/topbar'
-    %main.container{:role => "main"}
+    #logreg-forms
       = yield
